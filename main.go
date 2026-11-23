@@ -25,7 +25,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Println("Bot is running...")
+	log.Println("Stacker is working...")
 
 	b.Handle("/x", func(c tele.Context) error {
 		return c.Send("https://x.com/riverboat_x/")
@@ -33,6 +33,18 @@ func main() {
 
 	b.Handle("/ca", func(c tele.Context) error {
 		return c.Send("4t1xhKJd6oFGr98oWJoxYjLU74eFe7xiYSRDoX18pump")
+	})
+
+	b.Handle("ca", func(c tele.Context) error {
+		return c.Send("4t1xhKJd6oFGr98oWJoxYjLU74eFe7xiYSRDoX18pump")
+	})
+
+	b.Handle("/app", func(c tele.Context) error {
+		return c.Send("https://app.riverboat.zone/")
+	})
+
+	b.Handle("/website", func(c tele.Context) error {
+		return c.Send("https://riverboat.zone/")
 	})
 
 	b.Start()
